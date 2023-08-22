@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "907736358448",
+    "project_id": "chatlino",
+    "storage_bucket": "chatlino.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907736358448:android:71002670745550d54457f5",
+        "android_client_info": {
+          "package_name": "com.svape.chathappy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907736358448-pf2p9ba49t4c6a3kor82o69629bnafkf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.svape.chathappy",
+            "certificate_hash": "1e25cb539a94e60ffd48662dee569658f275706a"
+          }
+        },
+        {
+          "client_id": "907736358448-ajkbm73s2rpt6q5skmupqf7jcmq6l205.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRLup3lJBKbiFyMrj42oIQvYkNwvKiWzs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907736358448-ajkbm73s2rpt6q5skmupqf7jcmq6l205.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

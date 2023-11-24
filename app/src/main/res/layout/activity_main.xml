@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jovenes en accion, futu "
+        android:text="Feli "
         android:textSize="25sp"
         android:textStyle="bold"
         android:gravity="center"

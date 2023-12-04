@@ -25,6 +25,12 @@ class RegisterActivity : AppCompatActivity() {
             validateData()
         }
 
+        binding.signupText.setOnClickListener {
+            val intent = Intent(applicationContext, LoginActivity::class.java)
+            startActivity(intent)
+            onPause()
+        }
+
     }
 
     private fun validateData() {

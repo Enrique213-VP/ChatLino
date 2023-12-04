@@ -4,4 +4,5 @@
     <string name="code">Developer</string>
     <string name="btn_register">Registrarse</string>
     <string name="btn_login">Ingresar</string>
+    <string name="logout">Cerrar sesion</string>
 </resources>

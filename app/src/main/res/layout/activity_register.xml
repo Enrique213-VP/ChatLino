@@ -52,7 +52,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/username"
+                    android:id="@+id/Nombre"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="40dp"
@@ -73,7 +73,7 @@
                     android:background="@drawable/edit_text"
                     android:drawableLeft="@drawable/email_icon"
                     android:drawablePadding="8dp"
-                    android:hint="Password"
+                    android:hint="Correo Electronico"
                     android:inputType="textEmailAddress"
                     android:padding="8dp"
                     android:textColor="@color/black"
@@ -87,7 +87,7 @@
                     android:background="@drawable/edit_text"
                     android:drawableLeft="@drawable/lock"
                     android:drawablePadding="8dp"
-                    android:hint="Password"
+                    android:hint="Contraseña"
                     android:inputType="textPassword"
                     android:padding="8dp"
                     android:textColor="@color/black"

@@ -31,6 +31,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    viewBinding {
+        enable = true
+    }
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -46,8 +49,16 @@ dependencies {
     //lottie
     implementation("com.airbnb.android:lottie:6.1.0")
 
+    //glide
+    implementation ("com.github.bumptech.glide:glide:4.14.2")
+
     //firebase
-    implementation("com.google.firebase:firebase-bom:32.2.2")
+    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-database-ktx")
+
+    //CircleImageView
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

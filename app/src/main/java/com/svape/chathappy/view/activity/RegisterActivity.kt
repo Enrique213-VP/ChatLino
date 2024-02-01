@@ -1,4 +1,4 @@
-package com.svape.chathappy
+package com.svape.chathappy.view.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +18,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar!!.hide()
+        //supportActionBar!!.hide()
         auth = FirebaseAuth.getInstance()
 
         binding.btnRegister.setOnClickListener {
@@ -36,7 +36,7 @@ class RegisterActivity : AppCompatActivity() {
     private fun validateData() {
 
         binding.apply {
-            val userName = username.text.toString()
+            val userName = userName.text.toString()
             val email = email.text.toString()
             val password = password.text.toString()
             val confirmPassword = confirmPassword.text.toString()
@@ -78,7 +78,7 @@ class RegisterActivity : AppCompatActivity() {
                 reference = FirebaseDatabase.getInstance().reference.child("Users").child(uid)
 
                 val hashMap = HashMap<String, Any>()
-                val hashMapUserName = binding.username.text.toString()
+                val hashMapUserName = binding.userName.text.toString()
                 val hashMapEmail = binding.email.text.toString()
 
                 hashMap["uid"] = uid
@@ -86,6 +86,14 @@ class RegisterActivity : AppCompatActivity() {
                 hashMap["email"] = hashMapEmail
                 hashMap["image"] = ""
                 hashMap["search"] = hashMapUserName.lowercase()
+
+                //new data
+                hashMap["names"] = ""
+                hashMap["lastName"] = ""
+                hashMap["profession"] = ""
+                hashMap["address"] = ""
+                hashMap["status"] = "offline"
+
 
                 reference.updateChildren(hashMap).addOnCompleteListener { register ->
                     if (register.isSuccessful) {

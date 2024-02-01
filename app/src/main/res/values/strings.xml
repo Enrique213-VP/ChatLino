@@ -5,4 +5,28 @@
     <string name="btn_register">Registrarse</string>
     <string name="btn_login">Ingresar</string>
     <string name="logout">Cerrar sesion</string>
+
+
+    <string name="menu_profile">Perfil</string>
+    <string name="menu_about">Acerca de</string>
+
+
+    <string name="item_name_user">Nombre de usuario</string>
+    <string name="item_email">Correo electronico</string>
+    <string name="name_user">Nombre de usuario</string>
+    <string name="search_user">Buscar usuario</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description_image_user">image_user</string>
+
+    <!--User profile-->
+    <string name="user_profile">Nombre de usuario</string>
+    <string name="profile_email">Email</string>
+    <string name="profile_names">Nombres</string>
+    <string name="profile_last_name">Apellidos</string>
+    <string name="profile_profession">Profesion</string>
+    <string name="profile_address">Direccion</string>
+    <string name="profile_age">Edad</string>
+    <string name="profile_phone_number">Telefono</string>
+    <string name="button_save">Guardar</string>
 </resources>

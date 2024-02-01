@@ -1,4 +1,4 @@
-package com.svape.chathappy
+package com.svape.chathappy.view.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

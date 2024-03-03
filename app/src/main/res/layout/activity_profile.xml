@@ -83,8 +83,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -104,8 +104,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -124,8 +124,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -144,8 +144,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -163,8 +163,8 @@
             android:id="@+id/text_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginTop="16dp"
             app:hintEnabled="true">
 
@@ -183,8 +183,8 @@
             android:id="@+id/text_phone_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginTop="16dp"
             app:hintEnabled="true">
 
@@ -200,9 +200,9 @@
 
         <Button
             android:id="@+id/button_save"
-            android:layout_width="250dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue_dark"
+            app:icon="@drawable/baseline_save_24"
             android:text="@string/button_save"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"/>

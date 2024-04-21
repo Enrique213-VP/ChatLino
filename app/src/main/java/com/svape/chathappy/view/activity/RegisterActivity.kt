@@ -92,6 +92,7 @@ class RegisterActivity : AppCompatActivity() {
                 hashMap["lastName"] = ""
                 hashMap["profession"] = ""
                 hashMap["address"] = ""
+                hashMap["number_Phone"] = ""
                 hashMap["status"] = "offline"
 
 

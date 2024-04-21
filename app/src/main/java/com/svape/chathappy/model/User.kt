@@ -66,7 +66,7 @@ class User {
         this.email = email
     }
 
-    fun getNumberPhone() : String?{
+    fun getNumberPhone() : String {
         return numberPhone
     }
 

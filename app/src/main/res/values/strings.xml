@@ -29,4 +29,16 @@
     <string name="profile_age">Edad</string>
     <string name="profile_phone_number">Telefono</string>
     <string name="button_save">Guardar</string>
+
+
+    <!--Image profile-->
+    <string name="btn_select_image_profile">Elegir imagen</string>
+    <string name="btn_update_image_profile">Actualizar</string>
+    
+    <!-- Dialogue box -->
+    
+    <string name="txt_select_image">Seleccionar Imagen de:</string>
+    <string name="btn_open_gallery">Galeria</string>
+    <string name="btn_open_camera">Camara</string>
+
 </resources>

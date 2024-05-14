@@ -34,11 +34,13 @@
     <!--Image profile-->
     <string name="btn_select_image_profile">Elegir imagen</string>
     <string name="btn_update_image_profile">Actualizar</string>
-    
+
     <!-- Dialogue box -->
-    
+
     <string name="txt_select_image">Seleccionar Imagen de:</string>
     <string name="btn_open_gallery">Galeria</string>
     <string name="btn_open_camera">Camara</string>
 
+    <!--Chat-->
+    <string name="message">Mensaje</string>
 </resources>

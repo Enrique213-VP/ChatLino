@@ -15,17 +15,9 @@ import com.svape.chathappy.model.User
 import com.svape.chathappy.view.chat.MessageActivity
 
 class UserAdapter(
-    context: Context,
-    userList: List<User>
-) : RecyclerView.Adapter<UserViewHolder>() {
-
-    private val context: Context
+    private val context: Context,
     private val userList: List<User>
-
-    init {
-        this.context = context
-        this.userList = userList
-    }
+) : RecyclerView.Adapter<UserViewHolder>() {
 
     private lateinit var binding: ItemUserBinding
 

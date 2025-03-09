@@ -11,6 +11,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
@@ -24,8 +25,9 @@ import com.google.firebase.storage.StorageTask
 import com.google.firebase.storage.UploadTask
 import com.svape.chathappy.R
 import com.svape.chathappy.databinding.ActivityMessageBinding
+import com.svape.chathappy.model.Chat
 import com.svape.chathappy.model.User
-import kotlin.coroutines.Continuation
+import com.svape.chathappy.view.adapter.ChatAdapter
 
 class MessageActivity : AppCompatActivity() {
 
@@ -118,6 +120,10 @@ class MessageActivity : AppCompatActivity() {
     private var uidUser: String = ""
     private var firebaseUser: FirebaseUser? = null
     private var imageUri: Uri? = null
+    private var chatAdapter: ChatAdapter? = null
+    private var chatList: List<Chat>? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -129,6 +135,12 @@ class MessageActivity : AppCompatActivity() {
             insets
         }
         firebaseUser = FirebaseAuth.getInstance().currentUser
+
+        binding.chats.setHasFixedSize(true)
+        val linearLayoutManager = LinearLayoutManager(applicationContext)
+        linearLayoutManager.stackFromEnd = true
+        binding.chats.layoutManager = linearLayoutManager
+
         getUID()
         readInformationUser()
         binding.apply {
@@ -215,6 +227,8 @@ class MessageActivity : AppCompatActivity() {
                 Glide.with(applicationContext).load(user.getImage())
                     .placeholder(R.drawable.ic_user)
                     .into(binding.imageProfile)
+
+                returnMessage(firebaseUser!!.uid, uidUser, user.getImage())
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -222,5 +236,40 @@ class MessageActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    private fun returnMessage(transmitterUid: String, receiverUid: String, receiverImage: String?) {
+
+        chatList = ArrayList()
+
+        val reference = FirebaseDatabase.getInstance().reference.child("Chats")
+        reference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                (chatList as ArrayList<Chat>).clear()
+                for (sn in snapshot.children) {
+                    val chat = sn.getValue(Chat::class.java)
+
+                    if (chat!!.getReceptor().equals(transmitterUid) && chat.getTransmitter()
+                            .equals(receiverUid) || chat.getReceptor()
+                            .equals(receiverUid) && chat.getTransmitter().equals(transmitterUid)
+                    ) {
+                        (chatList as ArrayList<Chat>).add(chat)
+                    }
+
+                    chatAdapter = ChatAdapter(
+                        this@MessageActivity,
+                        (chatList as ArrayList<Chat>),
+                        receiverImage!!
+                    )
+                    binding.chats.adapter = chatAdapter
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
     }
 }

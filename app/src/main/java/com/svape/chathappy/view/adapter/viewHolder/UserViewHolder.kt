@@ -10,11 +10,10 @@ class UserViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = ItemUserBinding.bind(view)
 
-
-    fun render(item: User) {
-        binding.itemNameUser.text = item.getNameUser()
-        binding.itemEmail.text = item.getEmail()
-        item.getImage()?.let { binding.itemImageUser.load(it) }
+    fun render(user: User) {
+        binding.itemNameUser.text = user.getNameUser()
+        binding.itemEmail.text = user.getEmail()
+        user.getImage()?.let { binding.itemImageUser.load(it) }
     }
 
 }

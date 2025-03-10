@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.ChatHappy" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
+        <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/blue_dark</item>
 
         <!-- Color de la barra de notificación para versiones Lollipop (5.0) y superiores -->
@@ -13,19 +13,26 @@
         <item name="popupMenuBackground">@color/white</item>
     </style>
 
+    <style name="Theme.ChatHappy" parent="Base.Theme.ChatHappy" />
+
     <style name="MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxStrokeColor">@color/blue_dark</item>
-        <item name="hintTextColor">@color/black</item>
+        <item name="hintTextColor">@color/black</item>>
     </style>
 
     <style name="MyTextInputEditText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
         <item name="boxStrokeColor">@color/black</item>
     </style>
 
+
     <style name="MyTabLayout" parent="Widget.Design.TabLayout">
         <item name="android:background">@color/blue_dark</item>
         <item name="tabTextColor">@color/white</item>
         <item name="tabSelectedTextColor">@color/white</item>
         <item name="tabIndicatorColor">@color/white</item>
+    </style>
+
+    <style name="MyActionBarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">@color/white</item>
     </style>
 </resources>

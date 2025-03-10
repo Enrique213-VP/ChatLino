@@ -46,7 +46,7 @@ class ProfileActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 // get data from Firebase
                 val user: User? = snapshot.getValue(User::class.java)
-                val name = user!!.getNameUser()
+                val userName = user!!.getNameUser()
                 val email = user.getEmail()
                 val names = user.getNames()
                 val lastName = user.getLastName()
@@ -56,7 +56,7 @@ class ProfileActivity : AppCompatActivity() {
                 val phone = user.getNumberPhone()
 
                 // set information
-                binding.profileNameUser.text = name
+                binding.profileNameUser.text = userName
                 binding.profileEmail.text = email
                 binding.userName.setText(names)
                 binding.profileTvLastName.setText(lastName)

@@ -177,14 +177,16 @@ class MessageActivity : AppCompatActivity() {
 
         val infoMessage = HashMap<String, Any?>()
         infoMessage["messageID"] = keyMessage
+        infoMessage["idMessage"] = keyMessage
         infoMessage["transmitter"] = uidGet
         infoMessage["receiver"] = sendUid
+        infoMessage["receptor"] = sendUid
         infoMessage["message"] = message
         infoMessage["url"] = ""
         infoMessage["view"] = false
+
         reference.child("Chats").child(keyMessage!!).setValue(infoMessage)
             .addOnCompleteListener { task ->
-
                 if (task.isSuccessful) {
                     val listMessageTransmitter =
                         FirebaseDatabase.getInstance().reference.child("ListMessage")
@@ -195,14 +197,16 @@ class MessageActivity : AppCompatActivity() {
                         ValueEventListener {
                         override fun onDataChange(snapshot: DataSnapshot) {
                             if (!snapshot.exists()) {
-                                listMessageTransmitter.child("uid").setValue(uidUser)
+                                listMessageTransmitter.child("uid")
+                                    .setValue(uidUser)
                             }
 
                             val listMessageReceiver =
                                 FirebaseDatabase.getInstance().reference.child("listMessage")
                                     .child(uidUser)
                                     .child(firebaseUser!!.uid)
-                            listMessageReceiver.child("uid").setValue(firebaseUser!!.uid)
+                            listMessageReceiver.child("uid")
+                                .setValue(firebaseUser!!.uid)
                         }
 
                         override fun onCancelled(error: DatabaseError) {
@@ -249,9 +253,8 @@ class MessageActivity : AppCompatActivity() {
                 for (sn in snapshot.children) {
                     val chat = sn.getValue(Chat::class.java)
 
-                    if (chat!!.getReceptor().equals(transmitterUid) && chat.getTransmitter()
-                            .equals(receiverUid) || chat.getReceptor()
-                            .equals(receiverUid) && chat.getTransmitter().equals(transmitterUid)
+                    if (chat!!.receptor == transmitterUid &&
+                        chat.transmitter == receiverUid || chat.receptor == receiverUid && chat.transmitter == transmitterUid
                     ) {
                         (chatList as ArrayList<Chat>).add(chat)
                     }

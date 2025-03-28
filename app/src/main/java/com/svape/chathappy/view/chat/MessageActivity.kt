@@ -130,8 +130,11 @@ class MessageActivity : AppCompatActivity() {
         binding = ActivityMessageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val imeVisible = insets.isVisible(WindowInsetsCompat.Type.ime())
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            val imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime())
+
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, if (imeVisible) imeInsets.bottom else systemBars.bottom)
             insets
         }
         firebaseUser = FirebaseAuth.getInstance().currentUser
